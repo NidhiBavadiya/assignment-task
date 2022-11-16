@@ -1,28 +1,36 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+<div>
+  <displatData></displatData>
+      <!-- <addData></addData> -->
+      <!-- <tableData></tableData> -->
+    <router-view></router-view>
   </div>
-</template>
+</template> 
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import DisplayData from './components/DisplayData.vue'
+// import AddData from './components/AddData.vue'
+//  import DataTable from './components/DataTable.vue'
+
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+   components:{'displatData':DisplayData,
+                  // 'tableData':DataTable,
+                  //  'addData':AddData
+              },
+    data() {
+      return {
+
+        }
+      }
+    }
+
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+#app{
+       background-color:#daf9f8; 
 }
+
 </style>
