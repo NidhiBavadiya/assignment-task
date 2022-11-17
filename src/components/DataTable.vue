@@ -12,7 +12,7 @@
             <td><input type="checkbox" name="" value="">{{detail.Task}}</td>
             <td>{{detail.priority}}</td>
             <td>{{detail.status}}</td>
-            <td><button type="button" v-on:click="deleteData()" class="btn_1">Delete</button><button type="button" class="btn_2">Edit</button></td>
+            <td><button type="button" v-on:click="deleteData(details.id)" class="btn_1">Delete</button><button type="button" class="btn_2">Edit</button></td>
         </tr>
     </table>
 </div>
@@ -26,11 +26,12 @@ export default {
     data() {
         return {
             //declare array for data
-            details:[{Task:'learn java',priority:'low',status:'done'},
-                {Task:'vuejs',priority:'high',status:'Undone'},
-                {Task:'gift',priority:'medium',status:'done'},
-                {Task:'practical',priority:'medium',status:'Undone'}],
+            details:[{id:1,Task :'learn java',priority:'low',status:'done'},
+                {id:2,Task:'vuejs',priority:'high',status:'Undone'},
+                {id:3,Task:'gift',priority:'medium',status:'done'},
+                {id:4,Task:'practical',priority:'medium',status:'Undone'}],
                 result:'',
+
                 
             blog:{
                 task:'',
@@ -42,8 +43,8 @@ export default {
    },
    // delete data function
    methods: {
-        deleteData:function(){
-           
+        deleteData:function(id){
+          console.log(id); 
         }
    },
 }
