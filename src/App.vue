@@ -3,7 +3,7 @@
   <displatData></displatData>
       <!-- <addData></addData> -->
       <!-- <tableData></tableData> -->
-    <router-view></router-view>
+      <!-- <router-view v-bind:addTask="addTask"></router-view> -->
   </div>
 </template> 
 
@@ -11,19 +11,25 @@
 
 import DisplayData from './components/DisplayData.vue'
 // import AddData from './components/AddData.vue'
-//  import DataTable from './components/DataTable.vue'
+// import DataTable from './components/DataTable.vue'
 
 
 export default {
+  // props:{
+  //   addTask:function(){}
+  // },
    components:{'displatData':DisplayData,
-                  // 'tableData':DataTable,
-                  //  'addData':AddData
+            // 'tableData':DataTable,
+            //  'addData':AddData
               },
     data() {
       return {
 
         }
-      }
+      },
+    method:{
+  
+    }
     }
 
 </script>

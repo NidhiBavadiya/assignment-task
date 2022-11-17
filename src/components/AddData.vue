@@ -8,34 +8,65 @@
         <form>
         <div class="data_input">
             <label>Task Name:-</label>
-            <input type="text" placeholder="enter name" v-model="blog.title" required/>
+            <input type="text" placeholder="enter name" v-model.lazy="blog.title" required/>
         </div>
         <div class="R_buttons">
             <label> priority:-</label><br>
-            <input type="radio" id="high" name="priority" value="high" />
+            <input type="radio" id="high" name="priority" value="high" v-model="blog.priority" />
             <label for="high">High</label><br />
-            <input type="radio" id="medium" name="priority" value="medium" />
+            <input type="radio" id="medium" name="priority" value="medium" v-model="blog.priority" />
             <label for="medium">Medium</label><br />
-            <input type="radio" id="low" name="priority" value="low" />
+            <input type="radio" id="low" name="priority" value="low" v-model="blog.priority" />
             <label for="low">Low</label>
         </div>    
         </form>
-             <button type="button">add task</button>
+              <button type="button" v-on:click.prevent="addTask()">show task</button> 
+<!--      
+              <button type="button" v-on:click.prevent="addTask()"><router-link to="/">show task</router-link></button> -->
+             
     </div>
+<div>
+  <p>task name:-{{blog.title}}</p>
+  <p>priority :- {{blog.priority}}</p>
+</div>
+
   </div>
 </template>
 
 <script>
 export default {
+  props:['details'],
   data() {
     return {
+      id:'',
         blog:{
+           id:this.id,
             title:'',
-            priority:''
+            priority:'',
+            status:'undone' 
         }
     };
   },
+  methods:{   //call method in parent
+      addTask: function() { 
+        let newTask={
+          id:this.blog.id,
+          title:this.blog.title,
+          priority:this.blog.priority,
+          status:this.blog.status
+
+        }
+        console.log(newTask)
+        this.details.push(newTask);
+        this.id++;
+        
+          //  console.log(task);
+    }
+  }
+
+
 };
+
 </script>
 
 <style scoped>
@@ -73,5 +104,9 @@ button{
     background-color: lightgray;
     border-radius: 22px;
   margin: 0px 0px 28px 11em;
+}
+a{
+    text-decoration:none;
+    color: black;
 }
 </style>
