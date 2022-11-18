@@ -35,8 +35,8 @@ export default {
 </script>
 
 <style>
-#app{
+/* #app{
        background-color:#daf9f8; 
-}
+} */
 
 </style>

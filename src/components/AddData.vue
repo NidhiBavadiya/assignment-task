@@ -1,5 +1,6 @@
 <template>
   <div id="Ind_2">
+  <button type="button"><router-link to="/">show Task</router-link></button> 
     <div class="task_box">
         <h2>Task</h2>
 
@@ -20,20 +21,14 @@
             <label for="low">Low</label>
         </div>    
         </form>
-              <button type="button" v-on:click.prevent="addTask()">show task</button> 
-<!--      
-              <button type="button" v-on:click.prevent="addTask()"><router-link to="/">show task</router-link></button> -->
-             
+              <button type="button" v-on:click.prevent="addTask()">Add Task</button>            
     </div>
-<div>
-  <p>task name:-{{blog.title}}</p>
-  <p>priority :- {{blog.priority}}</p>
-</div>
-
   </div>
 </template>
 
 <script>
+
+// import {bus} from '../main'
 export default {
   props:['details'],
   data() {
@@ -49,22 +44,20 @@ export default {
   },
   methods:{   //call method in parent
       addTask: function() { 
+         this.$router.push('/');
         let newTask={
           id:this.blog.id,
           title:this.blog.title,
           priority:this.blog.priority,
           status:this.blog.status
-
         }
         console.log(newTask)
         this.details.push(newTask);
         this.id++;
         
           //  console.log(task);
-    }
-  }
-
-
+    },
+  },
 };
 
 </script>
@@ -87,11 +80,12 @@ h2 {
   text-align: center;
 }
 label {
-  font-size: 12px;
+  font-size: 15px;
   padding: 0 0 0 8px;
 }
 .data_input{
     margin:10px;
+    text-align: left;
 }
 input{
   padding: 5px;
@@ -103,7 +97,7 @@ button{
     border: 1px solid black;
     background-color: lightgray;
     border-radius: 22px;
-  margin: 0px 0px 28px 11em;
+  margin: 0px 0px 28px 7px;
 }
 a{
     text-decoration:none;

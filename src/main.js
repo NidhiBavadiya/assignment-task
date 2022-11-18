@@ -9,6 +9,8 @@ const router = new VueRouter({
   routes:Routes
 });
 
+// const bus= new Vue();
+
 Vue.config.productionTip = false
 
 new Vue({
