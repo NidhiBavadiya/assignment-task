@@ -14,7 +14,7 @@
             <td>{{detail.priority}}</td>
             <td>{{detail.status}}</td>
             <td><button v-on:click.prevent="deleteData(index)" class="btn_1">Delete</button>
-            <button type="button" v-on:click.prevent="editData(detail.id)"  class="btn_2">Edit</button></td>
+            <button type="button" v-on:click.prevent="editData(detail)"  class="btn_2">Edit</button></td>
         </tr>
     </table>
 </div>
@@ -48,14 +48,9 @@ export default {
 
     },
 
-     editData:function(id){
-        this.$router.push('/add');
-        console.log(id)
-        this.details.slice(id,1)
-
-    // let valueId = this.details.id;
-    // after for loop   
-    // this.$emit   
+     editData:function(obj){
+        // this.$router.push('/add');
+        console.log(obj)
     },
    },
 }
