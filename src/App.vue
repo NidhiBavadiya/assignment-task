@@ -1,42 +1,21 @@
 <template>
-<div>
-  <displatData></displatData>
-      <!-- <addData></addData> -->
-      <!-- <tableData></tableData> -->
-      <!-- <router-view v-bind:addTask="addTask"></router-view> -->
+  <div>
+    <router-view :details="details"></router-view>
   </div>
-</template> 
+</template>
 
 <script>
-
-import DisplayData from './components/DisplayData.vue'
-// import AddData from './components/AddData.vue'
-// import DataTable from './components/DataTable.vue'
-
-
 export default {
-  // props:{
-  //   addTask:function(){}
-  // },
-   components:{'displatData':DisplayData,
-            // 'tableData':DataTable,
-            //  'addData':AddData
-              },
-    data() {
-      return {
-
-        }
-      },
-    method:{
-  
-    }
-    }
-
+  name: "app",
+  data() {
+    return {
+      details: [
+        { id: 1, title: "learn java", priority: "low", status: "Done" },
+        { id: 2, title: "vuejs", priority: "high", status: "Undone" },
+        { id: 3, title: "gift", priority: "medium", status: "Done" },
+        { id: 4, title: "practical", priority: "medium", status: "Undone" },
+      ],
+    };
+  },
+};
 </script>
-
-<style>
-/* #app{
-       background-color:#daf9f8; 
-} */
-
-</style>

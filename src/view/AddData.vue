@@ -2,21 +2,22 @@
   <!-- title component display for  title and task button -->
   <div id="Ind_1">
     <h1>{{ title }}</h1>
-    <router-view v-bind:details="details"></router-view>
+    <button type="button"><router-link to="/">show Task</router-link></button>
+    <addData :details="details"></addData>
   </div>
 </template>
 <script>
+import AddData from "../components/AddDataform.vue";
+
 export default {
+  props: ["details", "id"],
+
+  components: { addData: AddData },
+
   data() {
     return {
       title: "Todo List",
-      details: [
-        { id: 1, title: "learn java", priority: "low", status: "done" },
-        { id: 2, title: "vuejs", priority: "high", status: "Undone" },
-        { id: 3, title: "gift", priority: "medium", status: "done" },
-        { id: 4, title: "practical", priority: "medium", status: "Undone" },
-      ],
-      task:{}
+      detail: {},
     };
   },
 };
@@ -39,5 +40,13 @@ h1 {
 a {
   text-decoration: none;
   color: black;
+}
+button {
+  width: 84px;
+  height: 33px;
+  border: 1px solid black;
+  background-color: lightgray;
+  border-radius: 22px;
+  margin: 0px 0px 28px 7px;
 }
 </style>

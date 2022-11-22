@@ -1,8 +1,10 @@
-import  AddData  from './components/AddData.vue'
-import DataTable from './components/DataTable.vue'
+import DisplayData from './view/DisplayData.vue'
+import EditData from './view/EditData.vue'
+import AddData from './view/AddData.vue'
 
 
 export default [
-    {path:'/add',component:AddData},
-    {path:'/',component:DataTable}
+    { path: '/', component: DisplayData },
+    { path: '/add', component: AddData },
+    { path: '/edit/:id', component: EditData },
 ]

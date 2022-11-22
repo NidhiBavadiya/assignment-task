@@ -3,17 +3,16 @@ import App from './App.vue'
 import VueRouter from 'vue-router'
 import Routes from './routes'
 
- Vue.use(VueRouter);
+Vue.use(VueRouter);
 
 const router = new VueRouter({
-  routes:Routes
+  routes: Routes
 });
 
-// const bus= new Vue();
 
 Vue.config.productionTip = false
 
 new Vue({
   render: h => h(App),
-  router:router
+  router: router
 }).$mount('#app')
